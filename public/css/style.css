@@ -1,0 +1,130 @@
+body {
+  font-family: 'Consolas', Arial, sans-serif;
+  background: #f9f9f9;
+  margin-left: 40;
+  margin-right: 40;
+  padding: 0;
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(44, 62, 80, 0.08);
+}
+
+h1 {
+  color: #d35400;
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: #2980b9;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.cardapio ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardapio li:hover {
+  background: #ecf0f1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cardapio li {
+  background: #f3f3f3;
+  margin-bottom: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 5px solid #d35400;
+}
+
+.lanche-nome {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #2d3436;
+}
+
+.lanche-ingredientes {
+  color: #636e72;
+  font-size: 0.98em;
+}
+
+form {
+  background: #f3f3f3;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.03);
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px 0;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px 8px;
+  margin-bottom: 14px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 1em;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #d35400 60%, #e67e22 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #e67e22 60%, #d35400 100%);
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #d35400;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px 4px;
+  }
+  form {
+    padding: 12px;
+  }
+}

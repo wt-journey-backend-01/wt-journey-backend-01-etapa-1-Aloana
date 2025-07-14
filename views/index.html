@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>DevBurguer</title>
+</head>
+
+<body>
+    <h1>Bem-vindo ao DevBurger!</h1>
+    <div class="cardapio">
+        <h2>Cardápio</h2>
+        <ul id="lista-lanches">
+            <li>Carregando lanches...</li>
+        </ul>
+    </div>
+
+    <h2>Sugira um novo sabor!</h2>
+    <form action="/sugestao" method="get">
+        <label for="nome">Seu nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="ingredientes">Ingredientes sugeridos:</label>
+        <textarea id="ingredientes" name="ingredientes" required></textarea>
+
+        <button type="submit">Enviar sugestão</button>
+    </form>
+
+
+    <p><a href="/contato">Fale conosco</a></p>
+
+    <script>
+        fetch('/api/lanches')
+            .then(response => response.json())
+            .then(lanches => {
+                const lista = document.getElementById('lista-lanches');
+                lista.innerHTML = '';
+                lanches.forEach(lanche => {
+                    const item = document.createElement('li');
+                    item.innerHTML = `
+            <span class="lanche-nome">${lanche.nome}</span><br>
+            <span class="lanche-ingredientes">${lanche.ingredientes}</span>
+          `;
+                    lista.appendChild(item);
+                });
+            })
+            .catch(() => {
+                document.getElementById('lista-lanches').innerHTML = '<li>Erro ao carregar o cardápio.</li>';
+            });
+    </script>
+</body>
+
+</html>
